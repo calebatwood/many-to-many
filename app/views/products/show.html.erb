@@ -1,3 +1,10 @@
-<div class="page-header">
-  <h1>Product Show Page</h1>
+<div class="page-header"><div class="pull-right"><%= link_to 'Edit', edit_product_path(@product), class: "btn btn-info" %></div>
+  <h1> <%= @product.name %> </h1>
 </div>
+
+<dl class="dl-horizontal">
+<dt>Company</dt>
+<dd><%= @product.company.name %></dd>
+<dt>Product Price</dt>
+<dd>$<%= @product.price.round(2) %></dd>
+</dl>

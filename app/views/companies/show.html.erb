@@ -1,1 +1,15 @@
-<h2>Company show page</h2>
+<div class="page-header"><div class="pull-right"><%= link_to 'Edit', edit_company_path(@company), class: "btn btn-info" %></div>
+  <h1> <%= @company.name %> </h1>
+</div>
+
+<dl class="dl-horizontal">
+<dt>Catch Phrase</dt>
+<dd><%= @company.catch_phrase %></dd>
+<dt>Suffix</dt>
+<dd>$<%= @company.suffix %></dd>
+<dt>Products</dt>
+<% @company.products.each do |product| %>
+<dd><%= product.name %></dd>
+<dd>$<%= product.price.round(2) %></dd>
+<% end %>
+</dl>
