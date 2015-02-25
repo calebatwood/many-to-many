@@ -5,10 +5,12 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   post '/logout' => 'sessions#destroy'
 
-  resources :products
+  resources :products do
+    resources :product_reviews
+  end
 
   resources :companies do
-      resources :company_reviews
+    resources :company_reviews
   end
 
   resources :reviews
